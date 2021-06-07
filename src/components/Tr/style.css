@@ -1,0 +1,28 @@
+tbody tr {
+  
+  height: 4rem;
+  background-color: var(--shape-princial);
+  border-radius:5px;
+  text-align:left;
+}
+td {
+  font-size:16px;
+  font-weight: 400;
+  color: var(--textos)
+}
+tr td:nth-child(1) {
+  padding-left: 2rem;
+  color: var(--titulos)
+}
+.entrada-dinheiro{
+  color: var(--green)
+}
+.saida-dinheiro {
+  color: var(--red)
+}
+td:nth-child(3){
+  
+  height: 5rem;
+  display: flex;
+  align-items: center;
+}

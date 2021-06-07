@@ -1,0 +1,62 @@
+.entrada {
+  width: 22rem;
+  height: 8.5rem;
+  background-color: var(--shape-princial);
+  border-radius:5px;
+  padding-left: 2rem;
+  padding-top: 1.5rem;
+}
+.entrada h1:nth-child(1) {
+  font-size:16px;
+}
+
+.entrada div {
+  display: flex;
+  justify-content:space-between;
+  padding-right: 1rem;
+}
+
+.saida {
+  
+  width: 22rem;
+  height: 8.5rem;
+  background-color: var(--shape-princial);
+  border-radius:5px;
+  padding-left: 2rem;
+  padding-top: 1.5rem;
+}
+.saida h1:nth-child(1) {
+  font-size:16px;
+  color: var(--textos);
+}
+.saida div {
+  
+  display: flex;
+  justify-content:space-between;
+  padding-right: 1rem;
+}
+
+.total {
+  
+  width: 22rem;
+  height: 8.5rem;
+  background-color: var(--orange);
+  border-radius:5px;
+  padding-left: 2rem;
+  padding-top: 1.5rem;
+  color: var(--shape-princial);
+  
+}
+.total h1:nth-child(1) {
+  font-size:16px;
+  color: var(--shape-princial);
+}
+.total h1:nth-child(2) {
+  color: var(--shape-princial);
+}
+.total div {
+  
+  display: flex;
+  justify-content:space-between;
+  padding-right: 1rem;
+}

@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-color: #F0F1F5;
+  --secondary-color: #5636D3;
+  --shape-princial: #fff;
+  --titulos: #363F5F;
+  --textos : #969CB2;
+  --orange : #FF872C;
+  --red : #E83F5B;
+  --green : #12A454;
+
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+body {
+  font-family: poppins;
+  background-color: var(--body-color);
+}
+
+h1 {
+  font-weight: 400;
+  color: var(--titulos);
+}
+
+p {
+  font-weight: 400;
+  color: var(--textos);
+}
+
+h2 {
+  font-weight: bold;
+  color: var(--shape-princial);
+}
