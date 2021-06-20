@@ -16,9 +16,9 @@ export function Card({type}){
           { type === 'total' && <FiDollarSign size={32}/> }
         </span>
       </div>
-      {type === 'entrada' && <h1>R$ 17.500,00</h1>}
-      {type === 'saida' && <h1>R$ 2.200,00</h1>}
-      {type === 'total' && <h1>R$ 29.515,00</h1>}
+      {type === 'entrada' && <h1>R$ 5.500,00</h1>}
+      {type === 'saida' && <h1>R$ 2.700,00</h1>}
+      {type === 'total' && <h1>R$ 2.300,00</h1>}
     </div>
   )
 }
