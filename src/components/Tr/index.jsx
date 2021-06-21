@@ -3,18 +3,15 @@ import {FiDollarSign} from 'react-icons/fi'
 
 const formater = new Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' })
 
-export function Tr({category, title, price, date}){
+export function Tr( {activity} ){
   return (
     <tr>
-      <td>{title}</td>
-      <td className={category}>
-        { category === 'saida-dinheiro' ? 
-          `- ${formater.format(price)}` : 
-          formater.format(price)
-        }
+      <td>{activity.title}</td>
+      <td className={activity.entrance ? "entrada-dinheiro" : "saida-dinheiro"}>
+        { activity.Entrance ? formater.format(activity.value) : `- ${formater.format(activity.value)}` }
         </td>
       <td><FiDollarSign size={20} color="#969CB2"/> Venda</td>
-      <td>{date.toLocaleDateString()}</td>
+      <td>{activity.data}</td>
     </tr>
   )
 }
