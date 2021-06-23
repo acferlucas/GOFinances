@@ -13,23 +13,33 @@ import { useForm } from "react-hook-form";
 
 function App() {
   
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const [transactions, setTransaction] = useState([])
-  const [isOpen , SetisOpen] = useState(true)
+  const [isOpen , SetisOpen] = useState(false)
 
-  const onSubmit = data => {
+  const onSubmit = async (data) => {
     
     const title = data.description
     const value = Number(data.value)
     const entrance = (data.entrance === 'true' ? true : false)
+    let totaldata = new Date();
+    const date = ((totaldata.getDate() )) + "-" + ((totaldata.getMonth() + 1)) + "-" + totaldata.getFullYear(); 
+    console.log(date);
 
-    console.log({
+    const response = await api.post('/activity',{
       title,
       value,
-      entrance
+      entrance,
+      date
     })
-    
+
+    reset()
+    setTransaction([...transactions,response.data])
     SetisOpen(false)
+  }
+
+  function openModal(){
+    SetisOpen(true)
   }
   
   useEffect(() => {
@@ -54,6 +64,12 @@ function App() {
     return [accumulator[0], accumulator[1] + transaction.value, accumulator[2] - transaction.value]
   }, [0, 0, 0])
 
+  function handleDelete(id) {
+    
+    api.delete(`activity/${id}`)
+    setTransaction(transactions.filter(transaction => transaction.id !== id))
+  }
+
   return (
     <>
     <Header/>
@@ -64,7 +80,7 @@ function App() {
         <Card type="saida" value={formater.format(values[1])} />
         <Card type="total" value={formater.format(values[2])} />
       </div>
-      <button><FiPlus /> Nova transação</button>
+      <button onClick={openModal}><FiPlus /> Nova transação</button>
       <table>
         <thead>
           <tr>
@@ -75,9 +91,8 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          
           {transactions.map((activity) =>(
-            <Tr activity= {activity} key={activity.id}/>
+            <Tr activity= {activity} handleDelete={handleDelete} key={activity.id}/>
           ))}
         </tbody>
       </table>

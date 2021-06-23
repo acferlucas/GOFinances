@@ -1,13 +1,12 @@
 import './style.css'
-import {FiArrowUpCircle} from 'react-icons/fi'
 
-import logoImg from '../../assets/logo.svg'
+import logoImg from '../../assets/LogmyFinance.svg'
 
 export function Header(){
   return (
     <header>
       <div>
-        <img src={logoImg} alt=""/>
+        <img src={logoImg} alt="Logo"/>
         <div>
           <a href="#">Listagem</a>
           <a href="#">Importar</a>

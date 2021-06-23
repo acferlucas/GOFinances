@@ -26,3 +26,14 @@ td:nth-child(3){
   display: flex;
   align-items: center;
 }
+td:nth-child(5){
+  width: 2rem;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+td:nth-child(5) button {
+  border: none;
+  background-color:#fff;
+  cursor:pointer;
+}
